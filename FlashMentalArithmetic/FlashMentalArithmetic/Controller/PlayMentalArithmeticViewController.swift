@@ -9,14 +9,16 @@ import UIKit
 
 class PlayMentalArithmeticViewController: UIViewController {
     
-    @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var answerTextField: UITextField!
-    @IBOutlet weak var decisionButtonStatus: UIButton!
-    @IBOutlet weak var startButtonStatus: UIButton!
+    @IBOutlet private weak var label: UILabel!
+    @IBOutlet private weak var answerTextField: UITextField!
+    @IBOutlet private weak var decisionButtonStatus: UIButton!
+    @IBOutlet private weak var startButtonStatus: UIButton!
     
-    var receiveIndex = 0
     private var timer = Timer()
-    var rezult = 0
+    private var result = 0
+    private var level: Level = .level1
+    private var interval:Interval = .easy
+    private var max = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,9 +38,9 @@ class PlayMentalArithmeticViewController: UIViewController {
             present(alert, animated: true, completion: nil)
         } else {
             decisionButtonStatus.isEnabled = true
-            let correctAnswerVC = storyboard?.instantiateViewController(withIdentifier: "correctAnswerVC") as! CorrectAnswerViewController
-            correctAnswerVC.receiveTrueAnswer = rezult
-            correctAnswerVC.receiveMyAnswer = Int(answerTextField.text!)!
+            let correctAnswerVC = storyboard?.instantiateViewController(withIdentifier: "correctAnswerVC") as! ResultViewController
+            correctAnswerVC.total = result
+            correctAnswerVC.myAnswer = Int(answerTextField.text!)!
             self.present(correctAnswerVC, animated: true, completion:nil)
         }
     }
@@ -49,91 +51,44 @@ class PlayMentalArithmeticViewController: UIViewController {
     }
     
     func timerSet() {
-        switch receiveIndex {
-        case 0:
-            timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(self.startTimerLevel1), userInfo: nil, repeats: true)
-        case 1:
-            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.startTimerLevel2), userInfo: nil, repeats: true)
-        case 2:
-            timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(self.startTimerLevel3), userInfo: nil, repeats: true)
-        case 3:
-            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.startTimerLevel4), userInfo: nil, repeats: true)
-        case 4:
-            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.startTimerLevel5), userInfo: nil, repeats: true)
-        case 5:
-            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.startTimerLevel6), userInfo: nil, repeats: true)
-        default:
-            break
+        switch level {
+        case .level1:
+            interval = .easy
+            max = 10
+        case .level2:
+            interval = .hard
+            max = 10
+        case .level3:
+            interval = .easy
+            max = 100
+        case .level4:
+            interval = .hard
+            max = 100
+        case .level5:
+            interval = .hard
+            max = 1000
+        case .level6:
+            interval = .hard
+            max = 10000
         }
+        timer = Timer.scheduledTimer(timeInterval: TimeInterval(interval.rawValue), target: self, selector: #selector(self.startTimerLevel), userInfo: nil, repeats: true)
     }
     
-    @objc func startTimerLevel1(){
-        wait(value: Int.random(in: 0...10)) {
-            self.timer.invalidate()
-            self.answerTextField.isHidden = false
-            self.decisionButtonStatus.isHidden = false
-            //self.decisionButtonStatus.isEnabled = false
-        }
-    }
-    
-    @objc func startTimerLevel2(){
-        wait(value: Int.random(in: 0...10)) {
-            self.timer.invalidate()
-            self.answerTextField.isHidden = false
-            self.decisionButtonStatus.isHidden = false
-            //self.decisionButtonStatus.isEnabled = false
-        }
-    }
-    
-    @objc func startTimerLevel3(){
-        wait(value: Int.random(in: 0...100)) {
-            self.timer.invalidate()
-            self.answerTextField.isHidden = false
-            self.decisionButtonStatus.isHidden = false
-            //self.decisionButtonStatus.isEnabled = false
-        }
-    }
-    
-    @objc func startTimerLevel4(){
-        wait(value: Int.random(in: 0...100)) {
-            self.timer.invalidate()
-            self.answerTextField.isHidden = false
-            self.decisionButtonStatus.isHidden = false
-            //self.decisionButtonStatus.isEnabled = false
-        }
-    }
-    
-    @objc func startTimerLevel5(){
-        wait(value: Int.random(in: 0...1000)) {
-            self.timer.invalidate()
-            self.answerTextField.isHidden = false
-            self.decisionButtonStatus.isHidden = false
-            //self.decisionButtonStatus.isEnabled = false
-        }
-    }
-    
-    @objc func startTimerLevel6(){
-        wait(value: Int.random(in: 0...10000)) {
-            self.timer.invalidate()
-            self.answerTextField.isHidden = false
-            self.decisionButtonStatus.isHidden = false
-            //self.decisionButtonStatus.isEnabled = false
-        }
-    }
-    
-    func wait(value:Int,compleation: @escaping () -> Void) {
+    @objc func startTimerLevel(){
+        let value = Int.random(in: 0...max)
         self.label.text = String(value)
-        rezult += Int(self.label.text!)!
-        print(rezult)
+        result += Int(self.label.text!)!
+        print(result)
         DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
-            compleation()
+            self.timer.invalidate()
+            self.answerTextField.isHidden = false
+            self.decisionButtonStatus.isHidden = false
         }
     }
 }
 
 extension PlayMentalArithmeticViewController:UITextFieldDelegate{
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        // キーボードを閉じる
         textField.resignFirstResponder()
         return true
     }

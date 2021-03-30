@@ -16,4 +16,12 @@ class CollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    func configureCell(level: String) {
+        roundView.layer.cornerRadius = 20
+        roundView.layer.shadowColor = UIColor.black.cgColor
+        roundView.layer.shadowOpacity = 1
+        roundView.layer.shadowRadius = 5
+        displayLabel.text = level
+    }
 }

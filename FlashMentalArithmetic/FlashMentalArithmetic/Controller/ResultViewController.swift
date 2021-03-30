@@ -7,26 +7,25 @@
 
 import UIKit
 
-class CorrectAnswerViewController: UIViewController {
+final class ResultViewController: UIViewController {
     
-    @IBOutlet weak var answerLabel: UILabel!
-    @IBOutlet weak var explanationLabel: UILabel!
-    var receiveTrueAnswer = 0
-    var receiveMyAnswer = 0
+    @IBOutlet private weak var answerLabel: UILabel!
+    @IBOutlet private weak var explanationLabel: UILabel!
+    var total = 0
+    var myAnswer = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        answer(receiveTrueAnswer: receiveTrueAnswer, receiveMyAnswer: receiveMyAnswer)
+        answer(total: total, myAnswer: myAnswer)
     }
     
-    func answer(receiveTrueAnswer:Int,receiveMyAnswer:Int){
-        
-        if receiveTrueAnswer == receiveMyAnswer {
+    func answer(total:Int,myAnswer:Int){
+        if total == myAnswer {
             answerLabel.text = "◯"
             explanationLabel.text = "正解です！\n次の問題に挑戦しよう！"
         } else {
             answerLabel.text = "×"
-            explanationLabel.text = "正解は\(receiveTrueAnswer)\nもう一度問題に挑戦しよう！"
+            explanationLabel.text = "正解は\(total)\nもう一度問題に挑戦しよう！"
         }
     }
     

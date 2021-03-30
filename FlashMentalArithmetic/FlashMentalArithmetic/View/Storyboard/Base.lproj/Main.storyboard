@@ -12,7 +12,7 @@
         <!--問題を選ぼう！-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FlashMentalArithmetic" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="DisplayLevelViewController" customModule="FlashMentalArithmetic" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -57,7 +57,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1042.0289855072465" y="80.357142857142847"/>
+            <point key="canvasLocation" x="1014" y="80"/>
         </scene>
         <!--Play Mental Arithmetic View Controller-->
         <scene sceneID="92I-UD-ZCl">
@@ -136,10 +136,10 @@
             </objects>
             <point key="canvasLocation" x="1818.840579710145" y="79.6875"/>
         </scene>
-        <!--Correct Answer View Controller-->
+        <!--Result View Controller-->
         <scene sceneID="OLY-eX-N59">
             <objects>
-                <viewController storyboardIdentifier="correctAnswerVC" modalPresentationStyle="overCurrentContext" id="fFR-pN-aOP" customClass="CorrectAnswerViewController" customModule="FlashMentalArithmetic" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="correctAnswerVC" modalPresentationStyle="overCurrentContext" id="fFR-pN-aOP" customClass="ResultViewController" customModule="FlashMentalArithmetic" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bh3-2u-nhU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

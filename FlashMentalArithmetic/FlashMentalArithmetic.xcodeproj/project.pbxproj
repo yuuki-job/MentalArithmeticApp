@@ -9,22 +9,23 @@
 /* Begin PBXBuildFile section */
 		52327CAA260AFDEB00083B6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52327CA9260AFDEB00083B6F /* AppDelegate.swift */; };
 		52327CAC260AFDEB00083B6F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52327CAB260AFDEB00083B6F /* SceneDelegate.swift */; };
-		52327CAE260AFDEB00083B6F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52327CAD260AFDEB00083B6F /* ViewController.swift */; };
+		52327CAE260AFDEB00083B6F /* DisplayLevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52327CAD260AFDEB00083B6F /* DisplayLevelViewController.swift */; };
 		52327CB1260AFDEB00083B6F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52327CAF260AFDEB00083B6F /* Main.storyboard */; };
 		52327CB3260AFDEF00083B6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52327CB2260AFDEF00083B6F /* Assets.xcassets */; };
 		52327CB6260AFDEF00083B6F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52327CB4260AFDEF00083B6F /* LaunchScreen.storyboard */; };
 		52327CC0260B052100083B6F /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52327CBE260B052000083B6F /* CollectionViewCell.swift */; };
 		52327CC1260B052100083B6F /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52327CBF260B052100083B6F /* CollectionViewCell.xib */; };
 		52327CCA260B11F700083B6F /* PlayMentalArithmeticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52327CC9260B11F700083B6F /* PlayMentalArithmeticViewController.swift */; };
-		52327CD2260C8D7B00083B6F /* CorrectAnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52327CD1260C8D7B00083B6F /* CorrectAnswerViewController.swift */; };
-		52327CD6260D9DEB00083B6F /* IncorrectAnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52327CD5260D9DEB00083B6F /* IncorrectAnswerViewController.swift */; };
+		52327CD2260C8D7B00083B6F /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52327CD1260C8D7B00083B6F /* ResultViewController.swift */; };
+		52419E9C2612AEC30000089C /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52419E9B2612AEC30000089C /* Level.swift */; };
+		52419EA22612B5C90000089C /* Interval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52419EA12612B5C90000089C /* Interval.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		52327CA6260AFDEB00083B6F /* FlashMentalArithmetic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashMentalArithmetic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52327CA9260AFDEB00083B6F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52327CAB260AFDEB00083B6F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		52327CAD260AFDEB00083B6F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		52327CAD260AFDEB00083B6F /* DisplayLevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayLevelViewController.swift; sourceTree = "<group>"; };
 		52327CB0260AFDEB00083B6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		52327CB2260AFDEF00083B6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52327CB5260AFDEF00083B6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -32,8 +33,9 @@
 		52327CBE260B052000083B6F /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		52327CBF260B052100083B6F /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		52327CC9260B11F700083B6F /* PlayMentalArithmeticViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayMentalArithmeticViewController.swift; sourceTree = "<group>"; };
-		52327CD1260C8D7B00083B6F /* CorrectAnswerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectAnswerViewController.swift; sourceTree = "<group>"; };
-		52327CD5260D9DEB00083B6F /* IncorrectAnswerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncorrectAnswerViewController.swift; sourceTree = "<group>"; };
+		52327CD1260C8D7B00083B6F /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		52419E9B2612AEC30000089C /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
+		52419EA12612B5C90000089C /* Interval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interval.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,11 +68,13 @@
 		52327CA8260AFDEB00083B6F /* FlashMentalArithmetic */ = {
 			isa = PBXGroup;
 			children = (
+				52419E992612ADFF0000089C /* Model */,
 				52327CC6260B107F00083B6F /* View */,
 				52327CC8260B108D00083B6F /* Controller */,
+				52419E982612ADED0000089C /* Enums */,
+				52419E972612ADD90000089C /* Extensions */,
 				52327CA9260AFDEB00083B6F /* AppDelegate.swift */,
 				52327CAB260AFDEB00083B6F /* SceneDelegate.swift */,
-				52327CAF260AFDEB00083B6F /* Main.storyboard */,
 				52327CB2260AFDEF00083B6F /* Assets.xcassets */,
 				52327CB4260AFDEF00083B6F /* LaunchScreen.storyboard */,
 				52327CB7260AFDEF00083B6F /* Info.plist */,
@@ -83,6 +87,7 @@
 			children = (
 				52327CBE260B052000083B6F /* CollectionViewCell.swift */,
 				52327CBF260B052100083B6F /* CollectionViewCell.xib */,
+				52419E9A2612AE350000089C /* Storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -90,12 +95,42 @@
 		52327CC8260B108D00083B6F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				52327CAD260AFDEB00083B6F /* ViewController.swift */,
+				52327CAD260AFDEB00083B6F /* DisplayLevelViewController.swift */,
 				52327CC9260B11F700083B6F /* PlayMentalArithmeticViewController.swift */,
-				52327CD1260C8D7B00083B6F /* CorrectAnswerViewController.swift */,
-				52327CD5260D9DEB00083B6F /* IncorrectAnswerViewController.swift */,
+				52327CD1260C8D7B00083B6F /* ResultViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		52419E972612ADD90000089C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		52419E982612ADED0000089C /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				52419E9B2612AEC30000089C /* Level.swift */,
+				52419EA12612B5C90000089C /* Interval.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		52419E992612ADFF0000089C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		52419E9A2612AE350000089C /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				52327CAF260AFDEB00083B6F /* Main.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,12 +204,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52327CD6260D9DEB00083B6F /* IncorrectAnswerViewController.swift in Sources */,
-				52327CD2260C8D7B00083B6F /* CorrectAnswerViewController.swift in Sources */,
-				52327CAE260AFDEB00083B6F /* ViewController.swift in Sources */,
+				52327CD2260C8D7B00083B6F /* ResultViewController.swift in Sources */,
+				52327CAE260AFDEB00083B6F /* DisplayLevelViewController.swift in Sources */,
 				52327CAA260AFDEB00083B6F /* AppDelegate.swift in Sources */,
 				52327CC0260B052100083B6F /* CollectionViewCell.swift in Sources */,
+				52419EA22612B5C90000089C /* Interval.swift in Sources */,
 				52327CAC260AFDEB00083B6F /* SceneDelegate.swift in Sources */,
+				52419E9C2612AEC30000089C /* Level.swift in Sources */,
 				52327CCA260B11F700083B6F /* PlayMentalArithmeticViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
